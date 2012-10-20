@@ -10,7 +10,31 @@ CubeController class:
    side-string. (front | right | left | back | top | bottom )
 -----------------
 */
-CubeController = Controller.extend({
+
+// Extracting rotation value out of 3d-matrix
+
+$.fn.rotation = function () {
+   var obj = this;
+   var matrix = obj.css("-webkit-transform") ||
+   obj.css("-moz-transform")    ||
+   obj.css("-ms-transform")     ||
+   obj.css("-o-transform")      ||
+   obj.css("transform");
+   if(matrix !== 'none') {
+      var values = matrix.split('(')[1];
+      values = values.split(')')[0];
+      values = values.split(',');
+      var a = values[0];
+      var b = values[2];
+      var c = values[8];
+      var d = values[10];
+      var scale = Math.sqrt(a*a + b*b);
+      var angle = Math.round(Math.atan2(b, a) * (180/Math.PI));
+   } else { var angle = 0; }
+   return angle;
+};
+
+var CubeController = Controller.extend({
    properties : {
       _className : "CubeController",
       sides : { 
@@ -334,4 +358,4 @@ CubeController = Controller.extend({
       }
    }
   
-}),
+});

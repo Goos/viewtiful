@@ -28,27 +28,6 @@ var checkSubviewInstances = function(instance, callback) {
 	}
 }
 
-$.fn.rotation = function () {
-   var obj = this;
-   var matrix = obj.css("-webkit-transform") ||
-   obj.css("-moz-transform")    ||
-   obj.css("-ms-transform")     ||
-   obj.css("-o-transform")      ||
-   obj.css("transform");
-   if(matrix !== 'none') {
-      var values = matrix.split('(')[1];
-      values = values.split(')')[0];
-      values = values.split(',');
-      var a = values[0];
-      var b = values[2];
-      var c = values[8];
-      var d = values[10];
-      var scale = Math.sqrt(a*a + b*b);
-      var angle = Math.round(Math.atan2(b, a) * (180/Math.PI));
-   } else { var angle = 0; }
-   return angle;
-};
-
 function testSupport() {
    var supports = {};
    supports.placeholders = false,
@@ -87,15 +66,9 @@ function testSupport() {
 }
 
 /*
- - Class inheritance snippet below courtesy of John Resig
+ - Class inheritance idea courtesy of John Resig
 */
 
-/* 
- * Simple JavaScript Inheritance
- * By John Resig http://ejohn.org/
- * MIT Licensed.
- */
-// Inspired by base2 and Prototype
 (function(){
   var initializing = false, fnTest = /xyz/.test(function(){xyz;}) ? /\b_super\b/ : /.*/;
   // The base Class implementation (does nothing)
@@ -215,7 +188,7 @@ function testSupport() {
             if (properties[propname].defaultValue) {
                this["_"+propname] = properties[propname].defaultValue;
             } 
-            /* DEPRECATED */
+            /* DEPRECATED - TODO: add fallback to defineG[S]etter when defineProperty is unsupported */
             // if (properties[propname].set && typeof properties[propname].set === "function") {
             //    this.__defineSetter__(propname, properties[propname].set);
             // }
