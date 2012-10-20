@@ -1,5 +1,4 @@
-## Viewtiful - A Javascript framework:
-Viewtiful is a lightweight, class-based, jQuery-fueled, framework. 
+## Viewtiful
 
 ### Example usage:
     :::javascript  
