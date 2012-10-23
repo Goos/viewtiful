@@ -665,7 +665,7 @@ TabBar = View.extend({
             this.tabWasSelected(this, tabIndex);
          },
          get: function() {
-            return tabItems[this._selectedIndex];
+            return this.tabItems[this._selectedIndex];
          }
       }
    },
