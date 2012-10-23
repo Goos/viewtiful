@@ -40,7 +40,7 @@ function testSupport() {
       transforms = {
            'WebkitTransform':'-webkit-transform',
            'OTransform':'-o-transform',
-           'MSTransform':'-ms-transform',
+           'msTransform':'-ms-transform',
            'MozTransform':'transform',
            'Transform':'transform'
       };
