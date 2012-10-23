@@ -182,7 +182,7 @@ function testSupport() {
                   set : properties[propname].set,
                   get : properties[propname].get,
                   configurable: true,
-                  enumerable : (properties[propname].private !== undefined) ? properties[propname].private : false,
+                  enumerable : (properties[propname].private !== undefined) ? properties[propname].private : false
                });
             }
             if (properties[propname].defaultValue) {
@@ -767,7 +767,7 @@ NavigationBar = View.extend({
       if (view instanceof NavigationBarItem) {
          this.buttonItems.push(view);
       }
-   },
+   }
 
 }),
 
@@ -778,7 +778,7 @@ NavigationBarItem = View.extend({
    },
    init : function(properties) {
       this._super(properties);
-   },
+   }
 }),
 
 ListItem = View.extend({
