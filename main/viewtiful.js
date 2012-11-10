@@ -30,8 +30,8 @@ var checkSubviewInstances = function(instance, callback) {
 
 function testSupport() {
    var supports = {};
-   supports.placeholders = false,
-   supports.localStorage = (!!window.localStorage),
+   supports.placeholders = false;
+   supports.localStorage = (!!window.localStorage);
    input = document.createElement('input');
    if ('placeholder' in input) {
       supports.placeholders = true;
