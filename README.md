@@ -22,19 +22,20 @@
             /* 
             * The mandatory init-method, which usually begins with 
             * this._super(); to call the super-class' init method, 
-            * in order to inherit its' initialization process, such 
-            * as to set up the DOM-nodes (as seen in the next method). 
+            * in order to inherit its' initialization process, which 
+            * includes setting up the DOM-nodes (as seen in the next 
+            * method). 
             */
         },
         drawDOM: function() {
             /* 
-             * The drawDOM()-method defines what DOM-nodes should 
-             * be defined, and is usually written as 
+             * The drawDOM()-method defines the DOM-structure of
+             * the view, and uses the jQuery DOM-parser as follows
              * this.DOM = $("<DOMElement></DOMElement>").
             */
         },
             /* 
-             * the rest of the methods, which are all inherited when 
+             * Followed by your own, optional methods, which are all inherited when 
              * extending an object. As an example, the View-class has a 
              * native addSubView()-method, which can be overridden by 
              * simply defining another method with the same name on the 
