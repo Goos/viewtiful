@@ -14,8 +14,10 @@
              * The view-objects' properties, such as "fontCase" for 
              * text, or "formAction" for forms, complete with 
              * optional getters and setters, as shown above.
-             * NOTE: the underscore on the "private" properties is 
-             * not strictly enforced, but mandatory.
+             * 
+             * NOTE: the underscore on the properties with setters & 
+             * getters must be used to properly set default values 
+             * when extending.
             */
         },
         init: function() {
